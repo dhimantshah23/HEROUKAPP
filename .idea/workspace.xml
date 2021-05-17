@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f3f904e0-bbb6-4ed1-b7b5-e0ea64752862" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assessment/responses/UserIdResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assessment/responses/UserIdResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/assessment/steps/TechnicalTestSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/assessment/steps/TechnicalTestSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/TechnicalTestStep.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/TechnicalTestStep.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/cucumber-reports/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/cucumber-reports/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-assesment.cucumber.TestRunner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/assesment.cucumber.TestRunner.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Features/TechnicalTestStep.feature" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/Features/TechnicalTestStep.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/assessment/responses/UserIdResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/assessment/responses/UserIdResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/assessment/steps/TechnicalTestSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/assessment/steps/TechnicalTestSteps.class" afterDir="false" />
-    </list>
+    <list default="true" id="f3f904e0-bbb6-4ed1-b7b5-e0ea64752862" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
