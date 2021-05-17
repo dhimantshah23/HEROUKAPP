@@ -37,6 +37,7 @@ public class TechnicalTestSteps {
     public void requestAllUsers() throws IOException {
         String endpoint = ReadData.readDataFromPropertyFile("getlistofusers.endpoint");
         BaseAPI.getRequest(endpoint);
+       // BaseAPI.responseGet.prettyPrint();
     }
 
     @And("the response does not include null id field")
@@ -52,7 +53,7 @@ public class TechnicalTestSteps {
 
     @When("get all users within 50 miles radius of london")
     public void getUserswithin50milesoflondon() throws IOException {
-//        UserIdResponse.parseLondonUsers();
+        UserIdResponse.parseLondonUsers();
 
     }
 

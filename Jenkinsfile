@@ -40,7 +40,6 @@ pipeline {
 
         stage('Run Tests and Generate reports') {
             steps {
-
                 script {
                     if ("${params.TAGS}" == 'All') {
                         sh "'${mvnHome}/bin/mvn' verify -P ${params.environment}"

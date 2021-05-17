@@ -22,4 +22,3 @@ Feature: HEROKUAPP
     When the request is performed to get all users
     Then response should be 200
     And get all users within 50 miles radius of london
-

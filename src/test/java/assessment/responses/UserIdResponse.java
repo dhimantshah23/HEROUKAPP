@@ -8,7 +8,8 @@ import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import assessment.base.BaseAPI;
-
+import net.sf.geographiclib.Geodesic;
+import net.sf.geographiclib.GeodesicData;
 
 
 public class UserIdResponse extends BaseAPI {
@@ -31,10 +32,7 @@ public class UserIdResponse extends BaseAPI {
         Integer userArraySize = jsonPathEvaluator.getList("$").size();
         int totalUserCount = 0;
         int[] nullArray = new int[userArraySize];
-        // logger.info("\n The user list Array is of size " + userArraySize);
-
         Boolean flag = false;
-
         for(int i= 0;i < userArraySize; i++) {
             if(jsonPathEvaluator.getString("id["+i+"]") == null){
                 logger.info("\n The Array element for ID null is "+ i);
@@ -60,44 +58,41 @@ public class UserIdResponse extends BaseAPI {
         else logger.info("\n******There are " + jsonPathEvaluator.getList("$").size() + " users in city of " + city);
     }
 
-//    public static void parseLondonUsers() {
-//        // 51 deg 30 min 26 sec N
-//        double londonLat = 51 + (30 / 60.0) + (26 / 60.0 / 60.0);
-//        // 0 deg 7 min 39 sec W
-//        double londonLon = 0 - (7 / 60.0) - (39 / 60.0 / 60.0);
-//
-//        System.out.println("People who live in London");
-//        JSONArray usersLondon = new JSONArray((responseGet));
-//
-//        for (int i = 0; i < usersLondon.length(); i++)
-//        {
-//            JSONObject userLondon = usersLondon.getJSONObject(i);
-//            // ...
-//            double latitude = userLondon.getDouble("latitude");
-//            double longitude = userLondon.getDouble("longitude");
-//
-//            double userLat = convertToDecimalDegrees(latitude);
-//            double userLon = convertToDecimalDegrees(longitude);
-//
-//            GeodesicData result =
-//                    Geodesic.WGS84.Inverse(londonLat, londonLon, userLat, userLon);
-//
-//            double distanceInMeters = result.s12;
-//            double distanceInMiles = distanceInMeters / 1609.34;
-//
-//            if (distanceInMiles <= 50)
-//            {
-//                int id = userLondon.getInt("id");
-//                String first_name = userLondon.getString("first_name");
-//                String last_name = userLondon.getString("last_name");
-//                String email = userLondon.getString("email");
-//                String ip_address = userLondon.getString("ip_address");
-//             //   int latitude = userLondon.getInt("latitude");
-//             //   int longitude = userLondon.getInt("longitude");
-//                System.out.println("id: " + id + " " + "first name: " + first_name + " " + "last name: " + last_name + " " + "email: " + email + " "
-//                        + "IP Address: " + ip_address + " " + "latitude: " + latitude + " " + "longtitude: " + longitude);
-//            }
-//        }
-//
-//    }
+    public static void parseLondonUsers() {
+        // 51 deg 30 min 26 sec N
+        double londonLat = 51 + (30 / 60.0) + (26 / 60.0 / 60.0);
+        // 0 deg 7 min 39 sec W
+        double londonLon = 0 - (7 / 60.0) - (39 / 60.0 / 60.0);
+
+       // JSONArray usersLondon = new JSONArray(responseGet.toString());
+        String resp = responseGet.prettyPrint();
+        JSONArray usersLondon = new JSONArray(resp);
+
+        for (int i = 0; i < usersLondon.length(); i++)
+        {
+            JSONObject userLondon = usersLondon.getJSONObject(i);
+            // ...
+            double userLat = userLondon.getDouble("latitude");
+            double userLon = userLondon.getDouble("longitude");
+
+            GeodesicData result =
+                    Geodesic.WGS84.Inverse(londonLat, londonLon, userLat, userLon);
+
+            double distanceInMeters = result.s12;
+            double distanceInMiles = distanceInMeters / 1609.34;
+
+            if (distanceInMiles <= 50)
+            {
+                int id = userLondon.getInt("id");
+                String first_name = userLondon.getString("first_name");
+                String last_name = userLondon.getString("last_name");
+                String email = userLondon.getString("email");
+                String ip_address = userLondon.getString("ip_address");
+
+                System.out.println("\n" + "******** id: " + id + " " + "first name: " + first_name + " " + "last name: " + last_name + " " + "email: " + email + " "
+                        + "IP Address: " + ip_address + " " + "latitude: " + userLat + " " + "longtitude: " + userLon);
+            }
+        }
+
+    }
 }

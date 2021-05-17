@@ -35,6 +35,7 @@ public class BaseAPI {
                     .extract()
                     .response();
             statusCode = responseGet.getStatusCode();
+
         } catch (Exception e) {
             logger.error("\n Error: " + e.getMessage());
         }
