@@ -1,7 +1,7 @@
-assesment\cucumber\BaseRunner.class
-assesment\base\BaseAPI.class
-assesment\steps\TechnicalTestSteps.class
-assesment\responses\UserIdResponse.class
-assesment\utils\ReadData.class
-assesment\cucumber\cucumberHooks.class
-assesment\cucumber\TestRunner.class
+assessment\responses\UserIdResponse.class
+assessment\steps\TechnicalTestSteps.class
+assessment\cucumber\cucumberHooks.class
+assessment\cucumber\BaseRunner.class
+assessment\base\BaseAPI.class
+assessment\cucumber\TestRunner.class
+assessment\utils\ReadData.class

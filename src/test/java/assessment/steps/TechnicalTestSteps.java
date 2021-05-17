@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
+import static com.jayway.jsonpath.JsonPath.parse;
+
 public class TechnicalTestSteps {
 
     private static Logger logger = LoggerFactory.getLogger(TechnicalTestSteps.class);
@@ -25,35 +27,10 @@ public class TechnicalTestSteps {
 
     @And ("verify that the response includes the data for \"([^\"]*)\"$")
     public void responseByCity(String city) throws IOException {
-        BaseAPI.responseGet.prettyPrint();
+        // BaseAPI.responseGet.prettyPrint();
         UserIdResponse.assertSuccesfullListUsersbyCity(city);
     }
 
-    //*************************************************************************
-    //Request for Instruction
-    @When("the request is performed using instructions")
-    public void theinstructions() throws IOException {
-        String endpoint = ReadData.readDataFromPropertyFile( "getinstrucstions.endpoint");
-        BaseAPI.getRequest(endpoint);
-    }
-    @And ("the response includes the correct message")
-    public void theinstructionsresponse() throws IOException {
-        BaseAPI.responseGet.prettyPrint();
-    }
-    //*************************************************************************
-    //Request using ID
-    @When("the request is performed using user id \"([^\"]*)\"$")
-    public void requestById(String id) throws IOException {
-        String endpoint = ReadData.readDataFromPropertyFile("getuserbyid.endpoint") + id;
-        BaseAPI.getRequest(endpoint);
-    }
-
-    @When("the response includes the correct id \"([^\"]*)\"$")
-    public void responseValidation(Integer id) throws IOException {
- //       BaseAPI.responseGet.prettyPrint();
-        UserIdResponse.assertSuccesfullUserResponsebyId(id);
-
-    }
     //*************************************************************************
     //Request get all users
     @When("the request is performed to get all users")
@@ -70,6 +47,14 @@ public class TechnicalTestSteps {
     @Then("^response should be (\\d+)$")
     public void responseShouldBe(int statusCode) {
         BaseAPI.assertResponseStatus(statusCode);
-        logger.info("Response is successful");
+      //  logger.info("Response is successful");
       }
+
+    @When("get all users within 50 miles radius of london")
+    public void getUserswithin50milesoflondon() throws IOException {
+//        UserIdResponse.parseLondonUsers();
+
+    }
+
+
 } //end of Class

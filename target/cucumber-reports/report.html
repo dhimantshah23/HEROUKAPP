@@ -52,7 +52,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 20, 2020 06:13:32 PM</span>
+                    <span class='label suite-start-time blue darken-3'>May 17, 2021 02:37:49 PM</span>
 				</a>
 			</li>
 			<li>
@@ -92,9 +92,8 @@
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@RunAllScenarios</a></li>
 					<li><a href='#'>@getUsersbyCity</a></li>
-					<li><a href='#'>@getInstruction</a></li>
-					<li><a href='#'>@getUserById</a></li>
 					<li><a href='#'>@getAllUsers</a></li>
+					<li><a href='#'>@getAllUsers-within-50-miles-radius-of-london</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -157,7 +156,7 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>7</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -172,7 +171,7 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>21</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>9</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -192,12 +191,12 @@
 				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>HEROKUAPP</span>
-						<span class='test-time'>Jun 20, 2020 06:13:32 PM</span>
+						<span class='test-time'>May 17, 2021 02:37:50 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 0m 4s+203ms</span>
+	<span class='duration right label'>0h 0m 11s+758ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Get Users by City</span>
@@ -228,48 +227,59 @@
 					</li>
 				</ul>
 		</li>
-		<li test-id='7' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@RunAllScenarios</span>
-				<span class='category label white-text'>@getUsersbyCity</span>
-			</div>
+	</ul>
+</div>
+<div class='scenario node' test-id='7' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@getAllUsers</span>
+	</div>
+	<span class='duration right label'>0h 0m 6s+271ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Get Number of users</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='8' class='node when pass' status='pass'>
 			
-			<b>Scenario</b>
+			<b>When</b>
 			
-			<span class="bdd-step-name">Get Users by City</span>
+			<span class="bdd-step-name">When the request is performed to get all users</span>
+				<div class='pre'>passed</div>
 			
-				<ul class='steps'>
-					<li test-id='8' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When the request is performed using city "Leeds"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='9' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then response should be 200</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='10' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And verify that the response includes the data for "Leeds"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
+		</li>
+		<li test-id='9' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then response should be 200</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And the response does not include null id field</span>
+				<div class='pre'>passed</div>
+			
 		</li>
 	</ul>
 </div>
 <div class='scenario node' test-id='11' status='pass'>
 	<div class='category-list'>
-		<span class='category label white-text'>@getInstruction</span>
+		<span class='category label white-text'>@getAllUsers-within-50-miles-radius-of-london</span>
 	</div>
-	<span class='duration right label'>0h 0m 0s+92ms</span>
+	<span class='duration right label'>0h 0m 0s+84ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
-		<span class="desc-text">Get Instructions</span>
+		<span class="desc-text">Get users</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='12' class='node when pass' status='pass'>
 			
 			<b>When</b>
 			
-			<span class="bdd-step-name">When the request is performed using instructions</span>
+			<span class="bdd-step-name">When the request is performed to get all users</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -285,127 +295,7 @@
 			
 			<b>And</b>
 			
-			<span class="bdd-step-name">And the response includes the correct message</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-	</ul>
-</div>
-<div class='scenariooutline node' test-id='15' status='pass'>
-	<span class='duration right label'>0h 0m 0s+805ms</span>
-	<div class='desc'>
-		<b>ScenarioOutline</b>
-		<span class="desc-text">Get user by ID</span>
-	</div>
-	<ul class='steps'>
-		<li test-id='16' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@getUserById</span>
-				<span class='category label white-text'>@RunAllScenarios</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Get user by ID</span>
-			
-				<ul class='steps'>
-					<li test-id='17' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When the request is performed using user id "1000"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='18' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then response should be 200</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='19' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And the response includes the correct id "1000"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='20' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@getUserById</span>
-				<span class='category label white-text'>@RunAllScenarios</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Get user by ID</span>
-			
-				<ul class='steps'>
-					<li test-id='21' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When the request is performed using user id "800"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='22' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then response should be 200</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='23' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And the response includes the correct id "800"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-		<li test-id='24' class='node scenario pass' status='pass'>
-			<div class='category-list'>
-				<span class='category label white-text'>@getUserById</span>
-				<span class='category label white-text'>@RunAllScenarios</span>
-			</div>
-			
-			<b>Scenario</b>
-			
-			<span class="bdd-step-name">Get user by ID</span>
-			
-				<ul class='steps'>
-					<li test-id='25' class='node when pass' status='pass'><b>When</b>
-						<span class="bdd-step-name">When the request is performed using user id "500"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='26' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then response should be 200</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='27' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And the response includes the correct id "500"</span>
-							<div class='pre'>passed</div>
-					</li>
-				</ul>
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='28' status='pass'>
-	<div class='category-list'>
-		<span class='category label white-text'>@getAllUsers</span>
-	</div>
-	<span class='duration right label'>0h 0m 9s+388ms</span>
-	<div class='desc'>
-		<b>Scenario</b>
-		<span class="desc-text">Get all users</span>
-	</div>
-	<ul class='steps'>
-		<li test-id='29' class='node when pass' status='pass'>
-			
-			<b>When</b>
-			
-			<span class="bdd-step-name">When the request is performed to get all users</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='30' class='node then pass' status='pass'>
-			
-			<b>Then</b>
-			
-			<span class="bdd-step-name">Then response should be 200</span>
-				<div class='pre'>passed</div>
-			
-		</li>
-		<li test-id='31' class='node and pass' status='pass'>
-			
-			<b>And</b>
-			
-			<span class="bdd-step-name">And the response does not include null id field</span>
+			<span class="bdd-step-name">And get all users within 50 miles radius of london</span>
 				<div class='pre'>passed</div>
 			
 		</li>
@@ -467,65 +357,6 @@
 					<div class='category-heading'>
 						<span class='category-name'>@RunAllScenarios</span>
 						<span class='category-status right'>
-							<span class='label pass'>6</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 6</span>
-							
-							
-						</div>
-					
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jun 20, 2020 06:13:32 PM</td>
-										<td class='linked' test-id='1'>HEROKUAPP</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:32 PM</td>
-										<td class='linked' test-id='3'>HEROKUAPP.Get Users by City.Get Users by City</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:36 PM</td>
-										<td class='linked' test-id='7'>HEROKUAPP.Get Users by City.Get Users by City</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:36 PM</td>
-										<td class='linked' test-id='16'>HEROKUAPP.Get user by ID.Get user by ID</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:37 PM</td>
-										<td class='linked' test-id='20'>HEROKUAPP.Get user by ID.Get user by ID</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:37 PM</td>
-										<td class='linked' test-id='24'>HEROKUAPP.Get user by ID.Get user by ID</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@getUsersbyCity</span>
-						<span class='category-status right'>
 							<span class='label pass'>2</span>
 						</span>
 					</div>
@@ -547,13 +378,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 20, 2020 06:13:32 PM</td>
-										<td class='linked' test-id='3'>HEROKUAPP.Get Users by City.Get Users by City</td>
+										<td>May 17, 2021 02:37:50 PM</td>
+										<td class='linked' test-id='1'>HEROKUAPP</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 									<tr>
-										<td>Jun 20, 2020 06:13:36 PM</td>
-										<td class='linked' test-id='7'>HEROKUAPP.Get Users by City.Get Users by City</td>
+										<td>May 17, 2021 02:37:50 PM</td>
+										<td class='linked' test-id='3'>HEROKUAPP.Get Users by City.Get Users by City</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -563,7 +394,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@getInstruction</span>
+						<span class='category-name'>@getUsersbyCity</span>
 						<span class='category-status right'>
 							<span class='label pass'>1</span>
 						</span>
@@ -586,52 +417,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 20, 2020 06:13:36 PM</td>
-										<td class='linked' test-id='11'>HEROKUAPP.Get Instructions</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@getUserById</span>
-						<span class='category-status right'>
-							<span class='label pass'>3</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 3</span>
-							
-							
-						</div>
-					
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Jun 20, 2020 06:13:36 PM</td>
-										<td class='linked' test-id='16'>HEROKUAPP.Get user by ID.Get user by ID</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:37 PM</td>
-										<td class='linked' test-id='20'>HEROKUAPP.Get user by ID.Get user by ID</td>
-										<td><span class='test-status pass'>pass</span></td>
-									</tr>
-									<tr>
-										<td>Jun 20, 2020 06:13:37 PM</td>
-										<td class='linked' test-id='24'>HEROKUAPP.Get user by ID.Get user by ID</td>
+										<td>May 17, 2021 02:37:50 PM</td>
+										<td class='linked' test-id='3'>HEROKUAPP.Get Users by City.Get Users by City</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -664,8 +451,42 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jun 20, 2020 06:13:37 PM</td>
-										<td class='linked' test-id='28'>HEROKUAPP.Get all users</td>
+										<td>May 17, 2021 02:38:01 PM</td>
+										<td class='linked' test-id='7'>HEROKUAPP.Get Number of users</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@getAllUsers-within-50-miles-radius-of-london</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>May 17, 2021 02:38:08 PM</td>
+										<td class='linked' test-id='11'>HEROKUAPP.Get users</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -700,31 +521,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>7</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>21</div>
+					<div class='panel-lead'>9</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 20, 2020 06:13:32 PM</div>
+					<div class='panel-lead'>May 17, 2021 02:37:49 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 20, 2020 06:13:46 PM</div>
+			 		<div class='panel-lead'>May 17, 2021 02:38:08 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>14,669ms</div>
+					<div class='panel-lead'>18,217ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -773,15 +594,6 @@
 						</tr>
 						<tr>
 							<td>@RunAllScenarios</td>
-							<td>6</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-						<tr>
-							<td>@getUsersbyCity</td>
 							<td>2</td>
 							<td>0</td>
 							<td>0</td>
@@ -790,7 +602,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@getInstruction</td>
+							<td>@getUsersbyCity</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -799,8 +611,8 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@getUserById</td>
-							<td>3</td>
+							<td>@getAllUsers</td>
+							<td>1</td>
 							<td>0</td>
 							<td>0</td>
 							<td>
@@ -808,7 +620,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@getAllUsers</td>
+							<td>@getAllUsers-within-50-miles-radius-of-london</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -837,7 +649,7 @@
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 7,
+				passChild: 3,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
@@ -846,7 +658,7 @@
 				infoChild: 0,
 				exceptionsChild: 0,
 				
-				passGrandChild: 21,
+				passGrandChild: 9,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,

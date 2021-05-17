@@ -10,27 +10,16 @@ Feature: HEROKUAPP
     Examples:
       | city    |
       | London   |
-      | Leeds   |
-
-  @getInstruction
-  Scenario: Get Instructions
-     When the request is performed using instructions
-     Then response should be 200
-     And the response includes the correct message
-
-  @getUserById
-  Scenario Outline: Get user by ID
-    When the request is performed using user id "<id>"
-    Then response should be 200
-    And the response includes the correct id "<id>"
-    Examples:
-      | id    |
-      |1000|
-      |800|
-      |500|
 
   @getAllUsers
-  Scenario: Get all users
+  Scenario: Get Number of users
     When the request is performed to get all users
     Then response should be 200
     And the response does not include null id field
+
+  @getAllUsers-within-50-miles-radius-of-london
+  Scenario: Get users
+    When the request is performed to get all users
+    Then response should be 200
+    And get all users within 50 miles radius of london
+
