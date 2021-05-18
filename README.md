@@ -45,10 +45,10 @@ Dynamic data is held in Example tables.
 
 COMMAND LINE EXECUTION
 ----------------------
-Go to the root folder of the project in terminal and type "mvn test"
+Go to the root folder of the project in terminal and type "mvn clean verify "
 To run specific scenarios use command mvn test -Dcucumber.options="--tags @ScenarioTag"
 
 MAINTAINERS
 -----------
 Current maintainers:
-dhimant.shah - dhimantshah25@gmail.com 
+dhimant.shah - dhimantshah23@yahoo.com
