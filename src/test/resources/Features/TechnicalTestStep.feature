@@ -1,6 +1,12 @@
 @RunAllScenarios
 Feature: HEROKUAPP
 
+  @getAllUsers
+  Scenario: Get Number of users
+    When the request is performed to get all users
+    Then response should be 200
+    And the response does not include null id field
+
   @getUsersbyCity
   Scenario Outline: Get Users by City
     When the request is performed using city "<city>"
@@ -10,12 +16,6 @@ Feature: HEROKUAPP
     Examples:
       | city    |
       | London   |
-
-  @getAllUsers
-  Scenario: Get Number of users
-    When the request is performed to get all users
-    Then response should be 200
-    And the response does not include null id field
 
   @getAllUsers-within-50-miles-radius-of-london
   Scenario: Get users

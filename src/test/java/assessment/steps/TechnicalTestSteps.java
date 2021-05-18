@@ -51,11 +51,11 @@ public class TechnicalTestSteps {
       //  logger.info("Response is successful");
       }
 
+    //Request to determine the 50 miles of london
     @When("get all users within 50 miles radius of london")
     public void getUserswithin50milesoflondon() throws IOException {
         UserIdResponse.parseLondonUsers();
 
     }
-
 
 } //end of Class
