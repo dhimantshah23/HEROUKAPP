@@ -12,6 +12,10 @@ import net.sf.geographiclib.Geodesic;
 import net.sf.geographiclib.GeodesicData;
 import assesment.request.User;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +56,7 @@ public class UserIdResponse extends BaseAPI {
         else logger.info("\n******There are " + jsonPathEvaluator.getList("$").size() + " users in city of " + city);
     }
 
-    public static void parseLondonUsers() {
+    public static void parseLondonUsers() throws IOException {
 
         List<User> london50MilesUsers = new ArrayList<>();
 
@@ -100,14 +104,16 @@ public class UserIdResponse extends BaseAPI {
 
         //Code to print Users within 50 miles of London
         System.out.println("********Users in London within 50 Miles******");
-        for (int j=0;j <london50MilesUsers.size();j++){
+        for (int j=0;j <london50MilesUsers.size();j++) {
             System.out.println("\n" + "******** id: " + london50MilesUsers.get(j).getId()
-                                    + " " + "first name: " + london50MilesUsers.get(j).getFirstName()
-                                    + " " + "last name: " + london50MilesUsers.get(j).getLastName()
-                                    + " " + "email: " +  london50MilesUsers.get(j).getEmail()
-                                    + " " + "IP Address: " +  london50MilesUsers.get(j).getIp_address()
-                                    + " " + "latitude: " +  london50MilesUsers.get(j).getLatitude()
-                                    + " " + "longtitude: " +  london50MilesUsers.get(j).getLongitude());
+                    + " " + "first name: " + london50MilesUsers.get(j).getFirstName()
+                    + " " + "last name: " + london50MilesUsers.get(j).getLastName()
+                    + " " + "email: " + london50MilesUsers.get(j).getEmail()
+                    + " " + "IP Address: " + london50MilesUsers.get(j).getIp_address()
+                    + " " + "latitude: " + london50MilesUsers.get(j).getLatitude()
+                    + " " + "longtitude: " + london50MilesUsers.get(j).getLongitude());
+
         }
     }
+
 }
