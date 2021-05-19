@@ -1,5 +1,7 @@
 package assessment.utils;
 
+import org.junit.Assert;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -22,8 +24,10 @@ public class ReadData {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            Assert.fail();
         } catch (IOException e) {
             e.printStackTrace();
+            Assert.fail();
         }
         return prop.getProperty(key);
     }
