@@ -114,6 +114,7 @@ public class UserIdResponse extends BaseAPI {
                     + " " + "longtitude: " + london50MilesUsers.get(j).getLongitude());
 
         }
+
     }
 
 }

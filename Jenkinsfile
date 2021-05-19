@@ -15,13 +15,8 @@ pipeline {
 
         choice(
                 name: 'environment',
-                choices: [ 'local','SIT','UAT'],
+                choices: [ 'dev','SIT','UAT'],
                 description: 'Choose the target environment'
-        )
-        choice(
-                name: 'browser',
-                choices: [ 'htmlunit'],
-                description: 'Choose the browser'
         )
     }
     stages {
